@@ -3,25 +3,31 @@ package entities;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 
 @Entity
 public class Municipio {
+
     @Id
     @GeneratedValue
-    private long id_cidadao;
+    private Long id;
+
     private String nome;
     private double objetivo_co2_mes_hab;
     private String NIF;
 
+    @OneToOne
+    private Utilizador utilizadorM;
+
     public Municipio(){}
 
-    public long getId_cidadao() {
-        return id_cidadao;
-    }
+    public Utilizador getUtilizadorM() {return utilizadorM;}
 
-    public void setId_cidadao(long id_cidadao) {
-        this.id_cidadao = id_cidadao;
-    }
+    public void setUtilizadorM(Utilizador utilizadorM) {this.utilizadorM = utilizadorM;}
+
+    public Long getId() {return id;}
+
+    public void setId(Long id) {this.id = id;}
 
     public String getNome() {
         return nome;

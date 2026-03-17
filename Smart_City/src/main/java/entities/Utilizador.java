@@ -3,6 +3,7 @@ package entities;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 
 import java.util.Date;
 
@@ -16,6 +17,24 @@ public class Utilizador {
     private String password;
     private String tipo;
     private Boolean ativo;
+
+
+    //Relação 1para1 Utilizador-Cidadão
+    @OneToOne(mappedBy = "utilizadorC")
+    private Cidadao cidadao;
+
+    //Relação 1para1 Utilizador-Município
+    @OneToOne(mappedBy = "utilizadorM")
+    private Municipio municipio;
+
+
+    public Cidadao getCidadao() {return cidadao;}
+
+    public Municipio getMunicipio() {return municipio;}
+
+    public void setMunicipio(Municipio municipio) {this.municipio = municipio;}
+
+    public void setCidadao(Cidadao cidadao) {this.cidadao = cidadao;}
 
     public Utilizador(){}
 

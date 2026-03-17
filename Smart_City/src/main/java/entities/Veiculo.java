@@ -1,8 +1,8 @@
 package entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 public class Veiculo {
@@ -14,7 +14,14 @@ public class Veiculo {
     private String combustivel;
     private Double CO2_kg_km;
 
+    @OneToOne(mappedBy = "veiculoP")
+    private Proprietario propriedade;
+
     public Veiculo(){}
+
+    public Proprietario getPropriedade() {return propriedade;}
+
+    public void setPropriedade(Proprietario propriedade) {this.propriedade = propriedade;}
 
     public String getMatricula() {
         return matricula;

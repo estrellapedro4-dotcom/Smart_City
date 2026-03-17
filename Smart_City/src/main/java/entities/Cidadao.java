@@ -1,20 +1,40 @@
 package entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 public class Cidadao {
     @Id
     @GeneratedValue
+    private Long id;
+
     private String nome;
     private String contacto;
     private int NIF;
     private String morada;
     private long id_municipio;
 
+    @OneToMany(mappedBy = "cidadaoP")
+    private List<Proprietario> propriedades;
+
+    @OneToOne
+    private Utilizador utilizadorC;
+
     public Cidadao(){}
+
+    public List<Proprietario> getPropriedades() {return propriedades;}
+
+    public void setPropriedades(List<Proprietario> propriedades) {this.propriedades = propriedades;}
+
+    public Long getId() {return id;}
+
+    public void setId(Long id) {this.id = id;}
+
+    public Utilizador getUtilizadorC() {return utilizadorC;}
+
+    public void setUtilizadorC(Utilizador utilizadorC) {this.utilizadorC = utilizadorC;}
 
     public String getNome() {
         return nome;
