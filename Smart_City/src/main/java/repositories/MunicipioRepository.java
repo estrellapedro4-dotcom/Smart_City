@@ -10,6 +10,6 @@ import java.util.List;
 public interface MunicipioRepository extends JpaRepository<Municipio, Long> {
     List<Municipio> findById_id (Long id);
     @Query(value = "SELECT * FROM Municipio", nativeQuery = true)
-    List<Task> customQuery(String name);
+    List<Municipio> customQuery(String name);
 
 }

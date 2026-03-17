@@ -11,6 +11,6 @@ import java.util.List;
 public interface VeiculoRepository extends JpaRepository<Veiculo, Long> {
     List<Veiculo> findById_id (Long id);
     @Query(value = "SELECT * FROM Veiculo", nativeQuery = true)
-    List<Task> customQuery(String matricula);
+    List<Veiculo> customQuery(String matricula);
 
 }
