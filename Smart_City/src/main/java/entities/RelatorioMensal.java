@@ -15,6 +15,7 @@ public class RelatorioMensal {
     private double co2_total_kg;
     private double kms_total;
     private Date mes_ano;
+    private int nume;
 
     public RelatorioMensal() {
     }
