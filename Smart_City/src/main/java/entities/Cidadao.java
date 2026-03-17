@@ -6,6 +6,8 @@ import java.util.List;
 
 @Entity
 public class Cidadao {
+
+    //ATRIBUTOS
     @Id
     @GeneratedValue
     private Long id;
@@ -16,30 +18,30 @@ public class Cidadao {
     private String morada;
     private long id_municipio;
 
+    //Relação 1paraMUITOS Cidadão-Proprietario
     @OneToMany(mappedBy = "cidadaoP")
     private List<Proprietario> propriedades;
 
+    //Relação 1para1 Utilizador-Cidadão
     @OneToOne
     private Utilizador utilizadorC;
 
+    //CONSTRUTOR VAZIO
     public Cidadao(){}
 
+    //GETTERS e SETTERS
     public List<Proprietario> getPropriedades() {return propriedades;}
-
     public void setPropriedades(List<Proprietario> propriedades) {this.propriedades = propriedades;}
 
     public Long getId() {return id;}
-
     public void setId(Long id) {this.id = id;}
 
     public Utilizador getUtilizadorC() {return utilizadorC;}
-
     public void setUtilizadorC(Utilizador utilizadorC) {this.utilizadorC = utilizadorC;}
 
     public String getNome() {
         return nome;
     }
-
     public void setNome(String nome) {
         this.nome = nome;
     }
@@ -47,7 +49,6 @@ public class Cidadao {
     public String getContacto() {
         return contacto;
     }
-
     public void setContacto(String contacto) {
         this.contacto = contacto;
     }
@@ -55,7 +56,6 @@ public class Cidadao {
     public int getNIF() {
         return NIF;
     }
-
     public void setNIF(int NIF) {
         this.NIF = NIF;
     }
@@ -63,7 +63,6 @@ public class Cidadao {
     public String getMorada() {
         return morada;
     }
-
     public void setMorada(String morada) {
         this.morada = morada;
     }
@@ -71,7 +70,6 @@ public class Cidadao {
     public long getId_municipio() {
         return id_municipio;
     }
-
     public void setId_municipio(long id_municipio) {
         this.id_municipio = id_municipio;
     }

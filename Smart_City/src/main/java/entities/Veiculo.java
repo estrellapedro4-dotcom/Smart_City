@@ -6,27 +6,30 @@ import java.util.List;
 
 @Entity
 public class Veiculo {
+
+    //ATRIBUTOS
     @Id
-    @GeneratedValue
     private String matricula;
+
     private String marca;
     private String modelo;
     private String combustivel;
     private Double CO2_kg_km;
 
+    //Relação 1para1 Veiculo-Proprietario
     @OneToOne(mappedBy = "veiculoP")
     private Proprietario propriedade;
 
+    //CONSTRUTOR VAZIO
     public Veiculo(){}
 
+    //GETTERS e SETTERS
     public Proprietario getPropriedade() {return propriedade;}
-
     public void setPropriedade(Proprietario propriedade) {this.propriedade = propriedade;}
 
     public String getMatricula() {
         return matricula;
     }
-
     public void setMatricula(String matricula) {
         this.matricula = matricula;
     }
@@ -34,7 +37,6 @@ public class Veiculo {
     public String getMarca() {
         return marca;
     }
-
     public void setMarca(String marca) {
         this.marca = marca;
     }
@@ -42,7 +44,6 @@ public class Veiculo {
     public String getModelo() {
         return modelo;
     }
-
     public void setModelo(String modelo) {
         this.modelo = modelo;
     }
@@ -50,7 +51,6 @@ public class Veiculo {
     public String getCombustivel() {
         return combustivel;
     }
-
     public void setCombustivel(String combustivel) {
         this.combustivel = combustivel;
     }
@@ -58,7 +58,6 @@ public class Veiculo {
     public Double getCO2_kg_km() {
         return CO2_kg_km;
     }
-
     public void setCO2_kg_km(Double CO2_kg_km) {
         this.CO2_kg_km = CO2_kg_km;
     }
