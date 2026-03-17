@@ -1,10 +1,8 @@
 package repositories;
 
-import entities.Cidadao;
 import entities.Veiculo;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.scheduling.config.Task;
 
 import java.util.List;
 
