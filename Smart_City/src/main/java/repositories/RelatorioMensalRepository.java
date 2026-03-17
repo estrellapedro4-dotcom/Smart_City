@@ -1,16 +1,16 @@
 package repositories;
 
 import entities.Cidadao;
-import entities.Municipio;
+import entities.RelatorioMensal;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.scheduling.config.Task;
 
 import java.util.List;
 
-public interface MunicipioRepository extends JpaRepository<Municipio, Long> {
-    List<Cidadao> findById_municipio (Long id_municipio);
-    @Query(value = "SELECT * FROM Municipio", nativeQuery = true)
+public interface RelatorioMensalRepository extends JpaRepository<RelatorioMensal, Long> {
+    List<Cidadao> findById_relatoriomensal (Long id_relatoriomensal);
+    @Query(value = "SELECT * FROM RelatorioMensal", nativeQuery = true)
     List<Task> customQuery(String name);
 
 }
