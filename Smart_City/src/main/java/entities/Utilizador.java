@@ -15,6 +15,7 @@ public class Utilizador {
     @GeneratedValue
     private Long id;
 
+    private String username;
     private Date data_registo;
     private String email;
     private String password;
@@ -33,6 +34,14 @@ public class Utilizador {
     //CONSTRUTOR VAZIO
     public Utilizador(){}
 
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
     public Cidadao getCidadao() {return cidadao;}
     public void setCidadao(Cidadao cidadao) {this.cidadao = cidadao;}
