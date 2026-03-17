@@ -1,23 +1,39 @@
 package entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.util.Date;
 
 @Entity
 public class RegistoKms {
+
+    //ATRIBUTOS
     @Id
     @GeneratedValue
+    private Long id;
+
     private Date mes_ano;
     private double kms_mes;
+
+    //Relação 1para1 RegistoKms-Taxa
+    @OneToOne
+    private Taxa taxa;
+
+    //Relação MUITOSpara1 RegistoKms-Veiculo
+    @ManyToOne
+    private Veiculo veiculo;
+
+
+    //CONSTRUTOR VAZIO
     public RegistoKms(){}
+
+    //GETTERS e SETTERS
+    public Long getId() {return id;}
+    public void setId(Long id) {this.id = id;}
 
     public Date getMes_ano() {
         return mes_ano;
     }
-
     public void setMes_ano(Date mes_ano) {
         this.mes_ano = mes_ano;
     }
@@ -25,8 +41,13 @@ public class RegistoKms {
     public double getKms_mes() {
         return kms_mes;
     }
-
     public void setKms_mes(double kms_mes) {
         this.kms_mes = kms_mes;
     }
+
+    public Taxa getTaxa() {return taxa;}
+    public void setTaxa(Taxa taxa) {this.taxa = taxa;}
+
+    public Veiculo getVeiculo() {return veiculo;}
+    public void setVeiculo(Veiculo veiculo) {this.veiculo = veiculo;}
 }

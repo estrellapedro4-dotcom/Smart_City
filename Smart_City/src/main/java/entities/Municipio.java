@@ -1,9 +1,8 @@
 package entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 public class Municipio {
@@ -20,6 +19,10 @@ public class Municipio {
     //Relação 1para1 Municipio-Utilizador
     @OneToOne
     private Utilizador utilizadorM;
+
+    //Relação 1para1 Municipio-Utilizador
+    @OneToMany(mappedBy = "municipioR")
+    private List<RelatorioMensal> relatoriosMensais;
 
     //CONSTRUTOR VAZIO
     public Municipio(){}

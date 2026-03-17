@@ -20,6 +20,10 @@ public class Veiculo {
     @OneToOne(mappedBy = "veiculoP")
     private Proprietario propriedade;
 
+    //Relação 1paraMUITOS Veiculo-RegistoKms
+    @OneToMany
+    private List<RegistoKms> registos;
+
     //CONSTRUTOR VAZIO
     public Veiculo(){}
 
@@ -61,4 +65,7 @@ public class Veiculo {
     public void setCO2_kg_km(Double CO2_kg_km) {
         this.CO2_kg_km = CO2_kg_km;
     }
+
+    public List<RegistoKms> getRegistos() {return registos;}
+    public void setRegistos(List<RegistoKms> registos) {this.registos = registos;}
 }
