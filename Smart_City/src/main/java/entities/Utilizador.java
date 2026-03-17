@@ -10,8 +10,12 @@ import java.util.Date;
 @Entity
 public class Utilizador {
 
+    //ATRIBUTOS
     @Id
     @GeneratedValue
+    private Long id;
+
+    private String username;
     private Date data_registo;
     private String email;
     private String password;
@@ -27,21 +31,27 @@ public class Utilizador {
     @OneToOne(mappedBy = "utilizadorM")
     private Municipio municipio;
 
+    //CONSTRUTOR VAZIO
+    public Utilizador(){}
+
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
     public Cidadao getCidadao() {return cidadao;}
-
-    public Municipio getMunicipio() {return municipio;}
-
-    public void setMunicipio(Municipio municipio) {this.municipio = municipio;}
-
     public void setCidadao(Cidadao cidadao) {this.cidadao = cidadao;}
 
-    public Utilizador(){}
+    public Municipio getMunicipio() {return municipio;}
+    public void setMunicipio(Municipio municipio) {this.municipio = municipio;}
 
     public Date getData_registo() {
         return data_registo;
     }
-
     public void setData_registo(Date data_registo) {
         this.data_registo = data_registo;
     }
@@ -49,7 +59,6 @@ public class Utilizador {
     public String getEmail() {
         return email;
     }
-
     public void setEmail(String email) {
         this.email = email;
     }
@@ -57,7 +66,6 @@ public class Utilizador {
     public String getPassword() {
         return password;
     }
-
     public void setPassword(String password) {
         this.password = password;
     }
@@ -65,7 +73,6 @@ public class Utilizador {
     public String getTipo() {
         return tipo;
     }
-
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
@@ -73,7 +80,6 @@ public class Utilizador {
     public Boolean getAtivo() {
         return ativo;
     }
-
     public void setAtivo(Boolean ativo) {
         this.ativo = ativo;
     }
