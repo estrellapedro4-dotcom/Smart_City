@@ -14,7 +14,7 @@ public class Municipio {
 
     private String nome;
     private double objetivo_co2_mes_hab;
-    private String NIF;
+    private String nif;
 
     //Relação 1para1 Municipio-Utilizador
     @OneToOne
@@ -47,9 +47,9 @@ public class Municipio {
     public void setObjetivo_co2_mes_hab(double objetivo_co2_mes_hab) {this.objetivo_co2_mes_hab = objetivo_co2_mes_hab;}
 
     public String getNIF() {
-        return NIF;
+        return nif;
     }
-    public void setNIF(String NIF) {
-        this.NIF = NIF;
+    public void setNIF(String nif) {
+        this.nif = nif;
     }
 }

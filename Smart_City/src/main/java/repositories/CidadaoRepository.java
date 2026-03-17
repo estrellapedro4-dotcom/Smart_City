@@ -13,5 +13,4 @@ public interface CidadaoRepository extends JpaRepository<Cidadao, Long> {
     List<Cidadao> findById_id(Long id);
     @Query(value = "SELECT * FROM Cidadao", nativeQuery = true)
     List<Cidadao> customQuery(String name);
-
 }

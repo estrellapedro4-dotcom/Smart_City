@@ -7,14 +7,13 @@ import java.util.List;
 @Entity
 public class Cidadao {
 
-    //ATRIBUTOS
     @Id
     @GeneratedValue
     private Long id;
 
     private String nome;
     private String contacto;
-    private int NIF;
+    private int nif;
     private String morada;
     private long id_municipio;
 
@@ -54,10 +53,10 @@ public class Cidadao {
     }
 
     public int getNIF() {
-        return NIF;
+        return nif;
     }
-    public void setNIF(int NIF) {
-        this.NIF = NIF;
+    public void setNIF(int nif) {
+        this.nif = nif;
     }
 
     public String getMorada() {

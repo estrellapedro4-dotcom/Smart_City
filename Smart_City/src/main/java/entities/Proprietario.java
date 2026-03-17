@@ -6,13 +6,14 @@ import java.util.Date;
 
 @Entity
 public class Proprietario {
-    //ATRIBUTOS
-    @ManyToOne
     @Id
+    @GeneratedValue
+    private Long id; // Como o Country!
+
+    @ManyToOne
     private Cidadao cidadaoP;
 
     @OneToOne
-    @Id
     private Veiculo veiculoP;
 
     private Date data_aquisicao;
