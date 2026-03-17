@@ -15,6 +15,7 @@ public class Utilizador {
     private String email;
     private String password;
     private String tipo;
+    private Boolean ativo;
 
     public Utilizador(){}
 
@@ -48,5 +49,13 @@ public class Utilizador {
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
+    }
+
+    public Boolean getAtivo() {
+        return ativo;
+    }
+
+    public void setAtivo(Boolean ativo) {
+        this.ativo = ativo;
     }
 }
