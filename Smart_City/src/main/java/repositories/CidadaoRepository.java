@@ -11,7 +11,7 @@ import java.util.List;
 
 @Repository
 public interface CidadaoRepository extends JpaRepository<Cidadao, Long> {
-    List<Cidadao> findById_cidadao (Long id_cidadao);
+    List<Cidadao> findById_id(Long id);
     @Query(value = "SELECT * FROM Cidadao", nativeQuery = true)
     List<Task> customQuery(String name);
 

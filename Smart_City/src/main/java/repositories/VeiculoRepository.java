@@ -9,7 +9,7 @@ import org.springframework.scheduling.config.Task;
 import java.util.List;
 
 public interface VeiculoRepository extends JpaRepository<Veiculo, Long> {
-    List<Cidadao> findById_veiculo (Long id_veiculo);
+    List<Veiculo> findById_id (Long id);
     @Query(value = "SELECT * FROM Veiculo", nativeQuery = true)
     List<Task> customQuery(String matricula);
 
